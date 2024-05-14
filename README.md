@@ -1,1 +1,11 @@
 # credit-risk-classification
+
+The purpose of this analysis was to predict the credit risk of a loan based on some other data points.  What we used to predict credit risk were these features: loan size, interest rate, borrower income, debt to income ratio, number of accounts, derogatory marks and total debt.  Loan status is our label, or dependent variable.  The features were used to predict the loan status.  Loan status is either 0 for healthy or 1 for higher risk.  We read in the csv file to a pandas dataframe then set our y label as loan status and set our X features as the rest of the data by dropping the loan status column.  From there we split the data into training and testing data.  We then fit our training data to a LogisticRegression from sklearn.  This model is now predicting the dependent variable y based on our training set of X.  We evaluated this model by printing a confusion report which shows the difference between what our model predicted for y and what the actual y value was of the test group.  We went a little deeper and printed a classification report to see how the model performed against the actual values of y, this showed precision, recall and f1-scores.
+
+FINDINGS -The model has a pretty good accuracy of .94, meaning it accurately predicts the y variable 94% of the time.  
+
+-The model is predicting healthy loans 100% of the time with perfect accuracy, recall and f1 scores.
+
+-The model falls short of perfect when predicting risky loans, it is still effective but is missing something.  The precision score is 87%, recall is 89% and f1 score is 88%
+
+I would recommend this logisticregression model to predict creditworthiness.  If we are trying to predict a healthy loan I would absolutely recommend this as it seems the features we are evaluating are very useful in predicting a health loan.  If what we are after is just predicting riskier loans, I may want to look at other models or additional features to get our accuracy score up a little higher.  The model does predict a healthy loan when actually it is higher risk in some instances, which could open up risk and loss to the business.  If anything we'd like to see it predict a loan to be risky even if it isn't, with how it is predicting now, riskier loans may sneak through the cracks.
