@@ -2,7 +2,7 @@
 
 The purpose of this analysis was to predict the credit risk of a loan based on some other data points.  What we used to predict credit risk were these features: loan size, interest rate, borrower income, debt to income ratio, number of accounts, derogatory marks and total debt.  Loan status is our label, or dependent variable.  The features were used to predict the loan status.  Loan status is either 0 for healthy or 1 for higher risk.  We read in the csv file to a pandas dataframe then set our y label as loan status and set our X features as the rest of the data by dropping the loan status column.  From there we split the data into training and testing data.  We then fit our training data to a LogisticRegression from sklearn.  This model is now predicting the dependent variable y based on our training set of X.  We evaluated this model by printing a confusion report which shows the difference between what our model predicted for y and what the actual y value was of the test group.  We went a little deeper and printed a classification report to see how the model performed against the actual values of y, this showed precision, recall and f1-scores.
 
-FINDINGS -The model has a pretty good accuracy of .94, meaning it accurately predicts the y variable 94% of the time.  
+FINDINGS -The model has a very good accuracy of .99, meaning it accurately predicts the y variable 99% of the time.  
 
 -The model is predicting healthy loans 100% of the time with perfect accuracy, recall and f1 scores.
 
